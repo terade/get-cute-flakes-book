@@ -25,5 +25,7 @@ do
         /g' "$tf"
     pandoc -f markdown -t latex "$tf" -o "$of" 
     sed -i -E 's/\\includegraphics\{\/nixos-and-flakes-book\.webp\}/\\includegraphics\[width=\\textwidth\]\{nixos-and-flakes-book-banner.png\}/g' "$of"
+    sed -i -E 's/\\subsection/\\subsubsection/g' "$of"
+    sed -i -E 's/\\section/\\subsection/g' "$of"
 
 done
